@@ -52,7 +52,7 @@ end
 
 ## Code Portability
 ```ruby
-# lib/helpers/ui_helper.rb
+# lib/helpers/ui_helpers.rb
 module UIHelpers
   def login(username, password)
     visit '/'
@@ -68,6 +68,8 @@ end
 
 World(UIHelpers)
 ```
+
+You can now call login in a Given step so that you don't need make obscure code by calling steps from within each other.
 ```ruby
 # features/step_definitions/login_steps.rb
 Given "I have logged into controlsinsight" do
