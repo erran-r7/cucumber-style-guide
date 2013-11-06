@@ -31,7 +31,8 @@ Feature: Login page
 require 'rspec'
 require 'rspec/expectations'
 require 'capybara/cucumber'
-
+```
+```ruby
 # features/step_definitions/login_steps.rb
 Given "I have opened the controlsinsight login page" do
   visit '/'
@@ -49,10 +50,33 @@ Then 'I should see the error:' do |expected_error|
 end
 ```
 
-
 ## Code Portability
+```ruby
+# lib/helpers/ui_helper.rb
+module UIHelpers
+  def login(username, password)
+    visit '/'
+    
+    expect(find('.login-wrapper').text).to eq('Welcome to ControlsInsight by Rapid7 LOG ON')
 
+    fill_in 'username', :with => username
+    fill_in 'password', :with => password
+
+    click_on 'Log on'
+  end
+end
+
+World(UIHelpers)
+```
+```ruby
+# features/step_definitions/login_steps.rb
+Given "I have logged into controlsinsight" do
+  login ENV['CONTROLS_USERNAME'], ENV['CONTROLS_PASSWORD']
+end
+
+```
 
 ## Tags
-
+### Gherkin
+### Tagged Hooks
 ## Utilizing DSL Methods
