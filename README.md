@@ -73,7 +73,6 @@ World(UIHelpers)
 Given "I have logged into controlsinsight" do
   login ENV['CONTROLS_USERNAME'], ENV['CONTROLS_PASSWORD']
 end
-
 ```
 
 ## Tags
