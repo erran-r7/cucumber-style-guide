@@ -11,12 +11,13 @@ A style guide used by the ControlsInsight team at Rapid7's cucumber suite.
 
 ## Gherkin
 ```gherkin
+# features/ui/login.feature
 Feature: Login page
   As a controlsinsight user
   I want to visit the login page
   In order to gain access to information on my security controls
 
-  Scenario: Invalid user
+  Scenario: Invalid user and password login
     Given I have opened the controlsinsight login page
     When I try to login as "johndoe" with the password "Secret123"
     Then I should see the error:
@@ -69,7 +70,6 @@ end
 World(UIHelpers)
 ```
 
-You can now call login in a Given step so that you don't need make obscure code by calling steps from within each other.
 ```ruby
 # features/step_definitions/login_steps.rb
 Given "I have logged into controlsinsight" do
@@ -79,5 +79,24 @@ end
 
 ## Tags
 ### Gherkin
+```gherkin
+# features/ui/login.feature
+...
+  @ui @wip
+  Scenario: Session timeout
+    Given I have logged into controlsinsight
+    When I allow my session to timeout
+    Then I should see the error:
+      """
+        The current session has expired. Please enter your credentials to continue.
+      """
+```
+
 ### Tagged Hooks
-## Utilizing DSL Methods
+```ruby
+# features/support/hooks.rb
+After '@ui,@wip' do |scenario|
+  $stdout.puts "\a\nPaused on '#{scenario.name}'. Press enter/return to continue to the next test."
+  $stdin.gets
+end
+```
