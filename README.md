@@ -7,7 +7,10 @@ A style guide used by the ControlsInsight team at Rapid7's cucumber suite.
 1. [Hooks](#hooks)
 1. [Code Portability](#code-portability)
 1. [Tags](#tags)
-1. [Utilizing DSL Methods](#utilizing-dsl-methods)
+
+## References
+1. [Capybara - The DSL](https://github.com/jnicklas/capybara#the-dsl)
+1. [RSpec Expectations - Built in matchers](https://github.com/rspec/rspec-expectations#built-in-matchers)
 
 ## Gherkin
 ```gherkin
@@ -49,6 +52,12 @@ end
 Then 'I should see the error:' do |expected_error|
   expect(find('div.alert').text).to eq(expected_error)
 end
+```
+
+## Hooks
+```ruby
+# features/support/hooks.rb
+require_relative './hooks/capybara/'
 ```
 
 ## Code Portability
