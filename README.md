@@ -15,6 +15,7 @@ A style guide used by the ControlsInsight team at Rapid7's cucumber suite.
 ## Gherkin
 ```gherkin
 # features/ui/login.feature
+@ui
 Feature: Login page
   As a controlsinsight user
   I want to visit the login page
@@ -27,6 +28,19 @@ Feature: Login page
       """
         Sorry. Those credentials did not work. Please try again.
       """
+
+  Scenario Outline: Invalid users attempt to login
+    Given I have opened the controlsinsight login page
+    When I try to login as "<user>" with the password "<password>"
+    Then I should see the error:
+      """
+        Sorry. Those credentials did not work. Please try again.
+      """
+    
+    Examples:
+      |   user  | password |
+      | janedoe | notpass! |
+      | jdoe    | sEcrEt34 |
 ```
 
 ## Step Definitions
@@ -90,7 +104,6 @@ end
 ### Gherkin
 ```gherkin
 # features/ui/login.feature
-...
   @ui @wip
   Scenario: Session timeout
     Given I have logged into controlsinsight
