@@ -1,6 +1,4 @@
 # Cucumber Style Guide
-A style guide used by the ControlsInsight team at Rapid7's cucumber suite.
-
 ## Table of Contents
 1. [Gherkin](#gherkin)
 1. [Step Definitions](#step-definitions)
@@ -13,6 +11,44 @@ A style guide used by the ControlsInsight team at Rapid7's cucumber suite.
 1. [RSpec Expectations - Built in matchers](https://github.com/rspec/rspec-expectations#built-in-matchers)
 
 ## Gherkin
+### Steps
+See [English verb tenses on Purdue OWL](https://owl.english.purdue.edu/owl/resource/601/01/).
+
+<table border="1">
+    <tr>
+        <th>Step (keyword)</th>
+        <th>Purpose</th>
+        <th>Verb tense</th>
+    </tr>
+    <tr>
+        <td><b>Given</b></td>
+        <td>To ensure that a precondition is met.</td>
+        <td>Past imperfect</td>
+    </tr>
+    <tr>
+        <td><b>When</b></td>
+        <td>To get into a desired state (to be used to make assertions).</td>
+        <td>Present</td>
+    </tr>
+    <tr>
+        <td><b>Then</b></td>
+        <td>To make assertions about the current state.</td>
+        <td>Future</td>
+    </tr>
+    <tr>
+        <td><b>And</b></td>
+        <td>To prevent conjunction steps.</td>
+        <td>Dependent on which step keyword is being replaced.</td>
+    </tr>
+    <tr>
+        <td><b>But</b></td>
+        <td>To prevent conjunction steps.</td>
+        <td>Dependent on which step keyword is being replaced.</td>
+    </tr>
+</table>
+
+### User Stories
+### Gherkin Example
 ```gherkin
 # features/ui/login.feature
 @ui
