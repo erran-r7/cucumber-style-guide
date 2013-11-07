@@ -12,7 +12,7 @@
 
 ## Gherkin
 ### Steps
-The following table describes which step keywords to use and when to use them.<sup><a href="#footnote-1" id="verb-tenses">1</a></sup>
+The following table describes which step keywords to use and when to use them.<sup><a href="#1-for-more-about-verb-tenses-see-english-verb-tenses-on-purdue-owl">1</a></sup>
 
 <table border="1">
     <tr>
@@ -137,7 +137,7 @@ end
 ```
 
 ## Tags
-### Gherkin
+### Gherkin Example
 ```gherkin
 # features/ui/login.feature
   @ui @wip
@@ -161,4 +161,4 @@ end
 
 ---
 
-<sup id="footnote-1">1. For more about verb tenses see [English verb tenses](https://owl.english.purdue.edu/owl/resource/601/01/) on Purdue OWL.<a href="#verb-tenses">↩</a></sup>
+###### 1. For more about verb tenses see [English verb tenses](https://owl.english.purdue.edu/owl/resource/601/01/) on Purdue OWL.[↩](#steps).
