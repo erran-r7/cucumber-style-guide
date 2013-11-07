@@ -12,7 +12,7 @@
 
 ## Gherkin
 ### Steps
-See [English verb tenses on Purdue OWL](https://owl.english.purdue.edu/owl/resource/601/01/).
+The following table describes which step keywords to use and when to use them.<sup><a href="#fn1" id="ref1">1</a></sup>
 
 <table border="1">
     <tr>
@@ -158,3 +158,7 @@ After '@ui,@wip' do |scenario|
   $stdin.gets
 end
 ```
+
+---
+
+<sup id="fn1">See [English verb tenses on Purdue OWL](https://owl.english.purdue.edu/owl/resource/601/01/).<a href="ref1">↩</a></sup>
