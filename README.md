@@ -28,6 +28,10 @@ Feature: Trending
 ```
 
 ### Scenario
+#### Anatomy of a Scenario
+1. [Steps](#steps)
+1. [Examples](#scenariosteps-example)
+
 #### Steps
 The following table describes which step keywords to use and when to use them.<sup><a href="#1-for-more-about-verb-tenses-see-english-verb-tenses-on-purdue-owl">1</a></sup>
 
