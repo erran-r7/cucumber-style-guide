@@ -28,17 +28,7 @@ Feature: Trending
 ```
 
 ### Scenario
-
-#### Background
-#### Examples
-```gherkin
-Examples:
-  |   user  | password |
-  | janedoe | notpass! |
-  | jdoe    | sEcrEt34 |
-```
-
-### Steps
+#### Steps
 The following table describes which step keywords to use and when to use them.<sup><a href="#1-for-more-about-verb-tenses-see-english-verb-tenses-on-purdue-owl">1</a></sup>
 
 <table border="1">
@@ -74,11 +64,20 @@ The following table describes which step keywords to use and when to use them.<s
     </tr>
 </table>
 #### Scenario/Steps Example
+
 ```gherkin
-Given I have put the system in the known state
-  And I have also tweaked a random configuration
-When I compare the last known state with the current state
-Then I should see that the last and current states are different
+Scenario: I click random buttons
+  Given I have put the system in the known state
+    And I have also tweaked a random configuration
+  When I compare the last known state with the current state
+  Then I should see that the last and current states are different
+```
+
+```gherkin
+Examples:
+  |   user  | password |
+  | janedoe | notpass! |
+  | jdoe    | sEcrEt34 |
 ```
 
 ### Gherkin Example
