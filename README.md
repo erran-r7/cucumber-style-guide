@@ -1,16 +1,43 @@
 # Cucumber Style Guide
 ## Table of Contents
-1. [Gherkin](#gherkin)
-1. [Step Definitions](#step-definitions)
-1. [Hooks](#hooks)
-1. [Code Portability](#code-portability)
-1. [Tags](#tags)
+1. [References](#references-)
+1. [Gherkin](#gherkin-)
+1. [Step Definitions](#step-definitions-)
+1. [Hooks](#hooks-)
+1. [Code Portability](#code-portability-)
+1. [Tags](#tags-)
 
-## References
+## [References ↩](#table-of-contents)
 1. [Capybara - The DSL](https://github.com/jnicklas/capybara#the-dsl)
 1. [RSpec Expectations - Built in matchers](https://github.com/rspec/rspec-expectations#built-in-matchers)
 
-## Gherkin
+## [Gherkin ↩](#table-of-contents)
+A Gherkin file is a file that describes a set of expectations about product features in plain text.
+
+`.feature`
+
+### User Stories
+User stories are, just that, a story that details the use case in the user's perspective.
+User stories follow the format:
+
+```gherkin
+Feature: Trending
+    As a controlsinsight customer
+    I want to see trending of security controls and trend grades
+    In order to see daily, weekly, and monthly improvements
+```
+
+### Scenario
+
+#### Background
+#### Examples
+```gherkin
+Examples:
+  |   user  | password |
+  | janedoe | notpass! |
+  | jdoe    | sEcrEt34 |
+```
+
 ### Steps
 The following table describes which step keywords to use and when to use them.<sup><a href="#1-for-more-about-verb-tenses-see-english-verb-tenses-on-purdue-owl">1</a></sup>
 
@@ -46,8 +73,14 @@ The following table describes which step keywords to use and when to use them.<s
         <td>Dependent on which step keyword is being replaced.</td>
     </tr>
 </table>
+#### Scenario/Steps Example
+```gherkin
+Given I have put the system in the known state
+  And I have also tweaked a random configuration
+When I compare the last known state with the current state
+Then I should see that the last and current states are different
+```
 
-### User Stories
 ### Gherkin Example
 ```gherkin
 # features/ui/login.feature
@@ -79,7 +112,7 @@ Feature: Login page
       | jdoe    | sEcrEt34 |
 ```
 
-## Step Definitions
+## [Step Definitions ↩](#table-of-contents)
 ```ruby
 # features/support/env.rb
 require 'rspec'
@@ -104,13 +137,13 @@ Then /^I should see the error:$/ do |expected_error|
 end
 ```
 
-## Hooks
+## [Hooks ↩](#table-of-contents)
 ```ruby
 # features/support/hooks.rb
 require_relative './hooks/capybara/'
 ```
 
-## Code Portability
+## [Code Portability ↩](#table-of-contents)
 ```ruby
 # lib/helpers/ui_helpers.rb
 module UIHelpers
@@ -136,7 +169,7 @@ Given /^I have logged into controlsinsight$/ do
 end
 ```
 
-## Tags
+## [Tags ↩](#table-of-contents)
 ### Gherkin Example
 ```gherkin
 # features/ui/login.feature
@@ -161,4 +194,4 @@ end
 
 ---
 
-###### 1. For more about verb tenses see [English verb tenses](https://owl.english.purdue.edu/owl/resource/601/01/) on Purdue OWL.[↩](#steps).
+###### 1. For more about verb tenses see [English verb tenses](https://owl.english.purdue.edu/owl/resource/601/01/) on Purdue OWL. [Return to steps ↩](#steps)
