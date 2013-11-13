@@ -88,18 +88,18 @@ require 'capybara/cucumber'
 ```
 ```ruby
 # features/step_definitions/login_steps.rb
-Given "I have opened the controlsinsight login page" do
+Given /^I have opened the controlsinsight login page$/ do
   visit '/'
 end
 
-When /I try to login as "([^"]+)" with the password "([^"]+)"/ do |username, password|
+When /^I try to login as "([^"]+)" with the password "([^"]+)"$/ do |username, password|
   fill_in 'username', :with => username
   fill_in 'password', :with => password
 
   click_link 'Log on'
 end
 
-Then 'I should see the error:' do |expected_error|
+Then /^I should see the error:$/ do |expected_error|
   expect(find('div.alert').text).to eq(expected_error)
 end
 ```
@@ -131,7 +131,7 @@ World(UIHelpers)
 
 ```ruby
 # features/step_definitions/login_steps.rb
-Given "I have logged into controlsinsight" do
+Given /^I have logged into controlsinsight$/ do
   login ENV['CONTROLS_USERNAME'], ENV['CONTROLS_PASSWORD']
 end
 ```
