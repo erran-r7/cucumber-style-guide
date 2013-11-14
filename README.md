@@ -8,6 +8,8 @@
 1. [Tags](#tags-)
 
 ## [References ↩](#table-of-contents)
+1. [Ruby ecosystem](http://learnxinyminutes.com/docs/ruby-ecosystem/)
+1. [Ruby](http://learnxinyminutes.com/docs/ruby/)
 1. [Capybara - The DSL](https://github.com/jnicklas/capybara#the-dsl)
 1. [RSpec Expectations - Built in matchers](https://github.com/rspec/rspec-expectations#built-in-matchers)
 
