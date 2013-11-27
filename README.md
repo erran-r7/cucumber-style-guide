@@ -10,25 +10,27 @@
 
 ## [Requirements ↩](#table-of-contents)
 ### Ruby Environment Management
-1. [rbenv](https://github.com/sstephenson/rbenv#readme) (Mac install) - Less magic, more control 
-    * `brew update`
-    * `brew install rbenv ruby-build`
-    * `rbenv install 2.0.0-p353`
-1. [rbenv](https://github.com/sstephenson/rbenv#readme) (Ubuntu install) 
-    * Perform [a basic git checkout](https://github.com/sstephenson/rbenv#basic-github-checkout)
-1. [RVM (Ruby Version Manager)](https://rvm.io) - Wide support (use this is you're new to Ruby)
-  * `\curl -L https://get.rvm.io | bash -s stable --ruby # Installs the latest stable ruby version`
+#### [rvm](https://rvm.io) - Wide support (use this is you're new to Ruby)
+* Mac OS X + Ubuntu instructions: 
+  * `\curl -L https://get.rvm.io | bash -s stable`
   * `source ~/.rvm/scripts/rvm`
-1. Post install:
-  * RVM:
-    * `[[ -f ~/.bashrc ]] && echo 'eval "$(rbenv init -)"' >> ~/.bashrc`
-    * `[[ -f ~/.bash_profile ]] && echo 'eval "$(rbenv init -)"' >> ~/.bash_profile`
-  * rbenv:
-    * `[[ -f ~/.bashrc ]] && echo ". ~/.rvm/scripts/rvm" >> ~/.bashrc`
-    * `[[ -f ~/.bash_profile ]] && echo ". ~/.rvm/scripts/rvm" >> ~/.bash_profile`
+  * `rvm install 2.0.0-p353`
+* Ensure that you load RVM as a function on login:
+  * Add `source ~/.rvm/scripts/rvm` to your profile (`~/.bashrc` or `~/.bash_profile`)
+
+#### [rbenv](https://github.com/sstephenson/rbenv) - Less magic than RVM, and more control over your environment
+* Mac OS X instructions: 
+  * `brew install rbenv ruby-build`
+  * `rbenv install 2.0.0-p353`
+* Ubuntu instructions:
+  * Perform [a basic git checkout](https://github.com/sstephenson/rbenv#basic-github-checkout).
+* To setup shims, completions, auto-rehash shims, and install the sh dispatcher *do either*:
+  * Add `eval "$(rbenv init -)"` to your profile (`~/.bashrc` or `~/.bash_profile`)
+  * Follow the [neckbeard install steps](https://github.com/sstephenson/rbenv#neckbeard-configuration)
+
 ### Cucumber suite
-1. Clone your cucumber suite
-1. `cd ~/cucumber-suite`
+1. Clone your cucumber suite.
+1. `cd ~/path/to/your/suite`
 1. `gem install bundler`
 1. `bundle install`
 1. Set up your environment (`. ./scripts/env.sh`)
