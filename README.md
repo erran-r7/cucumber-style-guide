@@ -26,7 +26,7 @@
   * Perform [a basic git checkout](https://github.com/sstephenson/rbenv#basic-github-checkout).
 * To setup shims, completions, auto-rehash shims, and install the sh dispatcher *do either*:
   * Add `eval "$(rbenv init -)"` to your profile (`~/.bashrc` or `~/.bash_profile`)
-  * Follow the [neckbeard install steps](https://github.com/sstephenson/rbenv#neckbeard-configuration)
+  * Follow [rbenb's neckbeard install steps](https://github.com/sstephenson/rbenv#neckbeard-configuration)
 
 ### Cucumber suite
 1. Clone your cucumber/automation repository from SCM.
