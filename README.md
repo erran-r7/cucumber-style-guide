@@ -33,7 +33,10 @@
 1. `cd ~/path/to/your/suite`
 1. `gem install bundler`
 1. `bundle install`
+1. If installing gems such as *nokogiri*, you may need to install these dependencies on non-Mac (Ubuntu/Debian) systems:
+  * `sudo apt-get install libxslt-dev libxml2-dev` 
 1. Set up your environment (`. ./scripts/env.sh`)
+1. Update to whatever branch you use
 1. Use prefixes such as your products name so you can easily grep for your environment variables.
   * `env | grep '^YOUR_PREFIX_'` 
 1. Run your first test using: `bundle exec cucumber features/ui/login.feature`
