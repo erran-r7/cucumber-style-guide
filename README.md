@@ -29,7 +29,7 @@
   * Follow the [neckbeard install steps](https://github.com/sstephenson/rbenv#neckbeard-configuration)
 
 ### Cucumber suite
-1. Clone your cucumber suite.
+1. Clone your cucumber/automation repository from SCM.
 1. `cd ~/path/to/your/suite`
 1. `gem install bundler`
 1. `bundle install`
