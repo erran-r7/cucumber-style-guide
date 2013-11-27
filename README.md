@@ -1,4 +1,4 @@
-# Cucumber Setup + Style Guide
+# Cucumber Style Guide
 ## Table of Contents
 1. [Requirements](#requirements-)
 1. [References](#references-)
@@ -9,19 +9,42 @@
 1. [Tags](#tags-)
 
 ## [Requirements ↩](#table-of-contents)
-1.
-1.
+### Ruby Environment Management
+1. [rbenv](https://github.com/sstephenson/rbenv#readme) (Mac install) - Less magic, more control 
+    * `brew update`
+    * `brew install rbenv ruby-build`
+    * `rbenv install 2.0.0-p353`
+1. [rbenv](https://github.com/sstephenson/rbenv#readme) (Ubuntu install) 
+    * Perform [a basic git checkout](https://github.com/sstephenson/rbenv#basic-github-checkout)
+1. [RVM (Ruby Version Manager)](https://rvm.io) - Wide support (use this is you're new to Ruby)
+  * `\curl -L https://get.rvm.io | bash -s stable --ruby # Installs the latest stable ruby version`
+  * `source ~/.rvm/scripts/rvm`
+1. Post install:
+  * RVM:
+    * `[[ -f ~/.bashrc ]] && echo 'eval "$(rbenv init -)"' >> ~/.bashrc`
+    * `[[ -f ~/.bash_profile ]] && echo 'eval "$(rbenv init -)"' >> ~/.bash_profile`
+  * rbenv:
+    * `[[ -f ~/.bashrc ]] && echo ". ~/.rvm/scripts/rvm" >> ~/.bashrc`
+    * `[[ -f ~/.bash_profile ]] && echo ". ~/.rvm/scripts/rvm" >> ~/.bash_profile`
+### Cucumber suite
+1. Clone your cucumber suite
+1. `cd ~/cucumber-suite`
+1. `gem install bundler`
+1. `bundle install`
+1. Set up your environment (`. ./scripts/env.sh`)
+1. Use prefixes such as your products name so you can easily grep for your environment variables.
+  * `env | grep '^YOUR_PREFIX_'` 
+1. Run your first test using: `bundle exec cucumber features/ui/login.feature`
 
 ## [References ↩](#table-of-contents)
-1. [Ruby ecosystem](http://learnxinyminutes.com/docs/ruby-ecosystem/)
-1. [Ruby](http://learnxinyminutes.com/docs/ruby/)
+1. [Learn Ruby ecosystem in Y minutes](http://learnxinyminutes.com/docs/ruby-ecosystem/)
+1. [Learn Ruby in Y minutes](http://learnxinyminutes.com/docs/ruby/)
 1. [Capybara - The DSL](https://github.com/jnicklas/capybara#the-dsl)
 1. [RSpec Expectations - Built in matchers](https://github.com/rspec/rspec-expectations#built-in-matchers)
 
 ## [Gherkin ↩](#table-of-contents)
 A Gherkin file is a file that describes a set of expectations about product features in plain text.
-
-`.feature`
+The Gherkin file extension is `.feature`.
 
 ### User Stories
 User stories are, just that, a story that details the use case in the user's perspective.
